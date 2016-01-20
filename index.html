@@ -71,6 +71,75 @@
                 </section>
 
                 <section>
+                    <section>
+                        <h2>Syntax</h2>
+
+                        <pre class="fragment"><code data-trim data-noescape>
+package hello
+
+fun main(args: Array<String>) : Unit {
+   println("Hello World!")
+}
+                        </code></pre>
+
+                        <p class="fragment">or more simply:</p>
+
+                        <pre class="fragment"><code data-trim data-noescape>
+package hello
+
+fun main(args: Array<String>) {
+   println("Hello World!")
+}
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <h2>Class Syntax</h2>
+                        <pre><code data-trim data-noescape>
+class Greeter(val name: String) {
+   fun greet() {
+      println("Hello, $name")
+   }
+}
+
+fun main(args: Array<String>) {
+   Greeter(args[0]).greet()
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Variables</h2>
+                        <h4>Immutable variables</h4>
+                        <pre><code data-trim data-noescape>
+val a: Int = 1
+val b = 1   // `Int` type is inferred
+val c: Int  // Type required when no initializer is provided
+c = 1       // definite assignment
+                        </code></pre>
+                        <h4>Mutable variables</h4>
+                        <pre><code data-trim data-noescape>
+var x = 5 // `Int` type is inferred
+x += 1
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>String Templates</h2>
+                    <pre class="fragment"><code data-trim data-noescape>
+val i = 10
+val s = "i = $i" // evaluates to "i = 10"
+                    </code></pre>
+                    <p class="fragment">expressions are supported via curly braces:</p>
+                    <pre class="fragment"><code data-trim data-noescape>
+val s = "abc"
+val str = "$s.length is ${s.length}" // "abc.length is 3"
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2>Further Reading</h2>
                     <ul>
                         <li><a href="https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c">https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c</a></li>
