@@ -140,6 +140,104 @@ val str = "$s.length is ${s.length}" // "abc.length is 3"
                 </section>
 
                 <section>
+                    <section>
+                        <h2>Null Safety</h2>
+                        <p class="fragment">Regular variables can not be null:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var a: String = "abc"
+a = null // compilation error
+                        </code></pre>
+                        <p class="fragment">To allow nulls, declare the variable as a nullable type:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var b: String? = "abc"
+b = null // ok
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Another Example</h2>
+                        <p class="fragment">Property access:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var a: String = "abc"
+val l = a.length // ok
+                        </code></pre>
+                        <p class="fragment">Compiler error if you try to access a nullable:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var b: String? = "def"
+val l = b.length // error: variable 'b' can be null
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>How to work with nullable types</h2>
+                        <h3>Checking for null</h3>
+                        <pre class="fragment"><code data-trim data-noescape>
+val l = if (b != null) b.length else -1
+                        </code></pre>
+                        <p class="fragment">The compiler tracks null checks, which allows for:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+if (b != null && b.length > 0)
+  print("String of length ${b.length}")
+else
+  print("Empty string")
+                        </code></pre>
+                        <p class="fragment">* Only works when b is immutable</p>
+                    </section>
+
+                    <section>
+                        <h2>Safe Calls</h2>
+                        <p>Recall this:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var b: String? = "def"
+val l = b.length // error: variable 'b' can be null
+                        </code></pre>
+                        <p class="fragment">How do we get around this? <span class="fragment">The safe operator:</span></p>
+                        <p class="fragment" style="color:red;">?.</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+var b: String? = "def"
+val l = b?.length
+                        </code></pre>
+                        <p class="fragment">returns b.length if b is not null, otherwise returns null</p>
+                    </section>
+
+                    <section>
+                        <h2>Chaining Safe Calls</h2>
+                        <pre><code data-noescape>
+bob?.department?.head?.name
+                        </code></pre>
+                        <p>This call will return null if any of the properties in the chain are null</p>
+                    </section>
+
+                    <section>
+                        <h2>Elvis Operator</h2>
+                        <pre class="fragment"><code data-noescape>
+val l: Int = if (b != null) b.length else -1
+                        </code></pre>
+                        <p class="fragment">The above can be rewritten more simply:</p>
+                        <pre class="fragment"><code data-noescape>
+val l = b?.length ?: -1
+                        </code></pre>
+                        <p class="fragment">Advanced example:</p>
+                        <pre class="fragment"><code data-noescape>
+fun foo(node: Node): String? {
+  val parent = node.getParent() ?: return null
+  val name = node.getName() ?: throw IllegalArgumentException("name expected")
+  // ...
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>!! Operator</h2>
+                        <p class="fragment">If your life just feels too empty without NPEs...</p>
+                        <pre class="fragment"><code data-noescape>
+val l = b!!.length()
+                        </code></pre>
+                        <p class="fragment">This will return the length if b has value, otherwise will throw a NullPointerException</p>
+                    </section>
+                </section>
+
+                <section>
                     <h2>Further Reading</h2>
                     <ul>
                         <li><a href="https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c">https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c</a></li>
