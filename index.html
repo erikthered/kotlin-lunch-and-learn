@@ -238,6 +238,45 @@ val l = b!!.length()
                 </section>
 
                 <section>
+                    <section>
+                        <h2>Extensions</h2>
+                        <p class="fragment">Allow you to extend a class with new functionality without having to inherit from the class or use any type of design pattern such as a Decorator.</p>
+                        <p class="fragment">Two kinds of extensions:</p>
+                        <ul class="fragment">
+                            <li>Extension functions</li>
+                            <li>Extension properties</li>
+                        </ul>
+                        <p class="fragment">No more Util classes!</p>
+                    </section>
+
+                    <section>
+                        <h2>Extension Functions</h2>
+                        <p class="fragment">To declare an extension function, its name must be prefixed with a receiver type (the type being extended)</p>
+                        <pre class="fragment"><code data-noescape>
+fun MutableList<Int>.swap(index1: Int, index2: Int) {
+  val tmp = this[index1] // 'this' corresponds to the list
+  this[index1] = this[index2]
+  this[index2] = tmp
+}
+                        </code></pre>
+                        <p class="fragment">This can now be used on any MutableList&lt;Int&gt;:</p>
+                        <pre class="fragment"><code data-noescape>
+val l = mutableListOf(1, 2, 3)
+l.swap(0, 2) // 'this' inside 'swap()' will hold the value of 'l'
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Extension Properties</h2>
+                        <pre class="fragment"><code data-noescape>
+val <T> List<T>.lastIndex: Int
+  get() = size - 1
+                        </code></pre>
+                        <p class="fragment">Extensions don't insert members into classes, so initializers are not allowed. Getters/setters must be used.</p>
+                    </section>
+                </section>
+
+                <section>
                     <h2>Further Reading</h2>
                     <ul>
                         <li><a href="https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c">https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3#.anphqfd1c</a></li>
