@@ -229,6 +229,16 @@ val str = "$s.length is ${s.length}" // "abc.length is 3"
                 </section>
 
                 <section>
+                    <h2>Data Classes</h2>
+                    <p>Generates the following methods for free:</p>
+                    <ul>
+                        <li>equals()/hashCode()</li>
+                        <li>toString()</li>
+                        <li>copy()</li>
+                    </ul>
+                </section>
+
+                <section>
                     <section>
                         <h2>Null Safety</h2>
                         <p class="fragment">Regular variables can not be null:</p>
@@ -332,8 +342,8 @@ val l = b!!.length()
                         <p class="fragment">Allow you to extend a class with new functionality without having to inherit from the class or use any type of design pattern such as a Decorator.</p>
                         <p class="fragment">Two kinds of extensions:</p>
                         <ul class="fragment">
-                            <li>Extension functions</li>
-                            <li>Extension properties</li>
+                            <li class="fragment">Extension functions</li>
+                            <li class="fragment">Extension properties</li>
                         </ul>
                         <p class="fragment">No more Util classes!</p>
                     </section>
