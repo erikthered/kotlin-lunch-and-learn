@@ -70,18 +70,20 @@
                             <li>And, keeping the useful level of expressiveness (see above), make it way simpler than the most mature competitor – Scala.</li>
                         </ul>
                     </section>
+
+                    <section>
+                        <h2>Features</h2>
+                        <ul>
+                            <li>Concise syntax</li>
+                            <li>Compiles to JVM bytecode or Javascript</li>
+                            <li>Interoperates seamlessly with Java</li>
+                            <li>Null safety</li>
+                            <li>A lot more!</li>
+                        </ul>
+                    </section>
 				</section>
 
-                <section>
-                    <h2>Features</h2>
-                    <ul>
-                        <li>Concise syntax</li>
-                        <li>Compiles to JVM bytecode or Javascript</li>
-                        <li>Interoperates seamlessly with Java</li>
-                        <li>Null safety</li>
-                        <li>A lot more!</li>
-                    </ul>
-                </section>
+
 
                 <section>
                     <section>
@@ -148,7 +150,7 @@ x += 1
 
                     <section>
                         <h2>If Expression</h2>
-                        <p>In Kotlin <i>if</i> is an expression (it returns a value)</p>
+                        <p>In Kotlin <em>if</em> is an expression (it returns a value)</p>
                         <pre><code data-trim data-noescape>
 // Traditional usage
 var max = a
@@ -168,7 +170,7 @@ val max = if (a > b) a else b
                     </section>
 
                     <section>
-                        <p>if branches can be blocks. In this case the last expression is the value of the block.</p>
+                        <p><em>if</em> branches can be blocks. In this case the last expression is the value of the block.</p>
                        <pre><code data-trim data-noescape>
 val max = if (a > b) {
     print("Choose a")
@@ -216,7 +218,6 @@ fun cases(obj: Any) {
                 <section>
                     <h2>String Templates</h2>
                     <pre class="fragment"><code data-trim data-noescape>
-}
 val i = 10
 val s = "i = $i" // evaluates to "i = 10"
                     </code></pre>
