@@ -124,11 +124,86 @@ var x = 5 // `Int` type is inferred
 x += 1
                         </code></pre>
                     </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Control Flow</h2>
+                        <p>Most of these structures should be familiar from Java, with some noted improvements</p>
+                    </section>
+
+                    <section>
+                        <h2>If Expression</h2>
+                        <p>In Kotlin <i>if</i> is an expression (it returns a value)</p>
+                        <pre><code data-trim data-noescape>
+// Traditional usage
+var max = a
+if (a < b)
+  max = b
+
+// With else
+var max: Int
+if (a > b)
+  max = a
+else
+  max = b
+
+// As expression
+val max = if (a > b) a else b
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <p>if branches can be blocks. In this case the last expression is the value of the block.</p>
+                       <pre><code data-trim data-noescape>
+val max = if (a > b) {
+    print("Choose a")
+    a
+  }
+  else {
+    print("Choose b")
+    b
+  }
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>For Loop</h2>
+                        <pre><code data-trim data-noescape>
+for (arg in args) {
+    print(arg)
+}
+                        </code></pre>
+                        <h2>While Loop</h2>
+                        <pre><code data-trim data-noescape>
+while (i < args.size){
+    print(args[i++])
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>When Expression</h2>
+                        <p>The when expression replaces the switch operator of C-style languages</p>
+                        <pre><code data-trim data-noescape>
+fun cases(obj: Any) {
+  when (obj) {
+    1          -> print("One")
+    "Hello"    -> print("Greeting")
+    is Long    -> print("Long")
+    !is String -> print("Not a string")
+    else       -> print("Unknown")
+  }
+}
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section>
                     <h2>String Templates</h2>
                     <pre class="fragment"><code data-trim data-noescape>
+}
 val i = 10
 val s = "i = $i" // evaluates to "i = 10"
                     </code></pre>
