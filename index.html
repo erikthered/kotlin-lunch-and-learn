@@ -126,15 +126,15 @@ fun main(args: Array<String>) {
 
                     <section>
                         <h2>Variables</h2>
-                        <h4>Immutable variables</h4>
-                        <pre><code data-trim data-noescape>
+                        <h4 class="fragment">Immutable variables</h4>
+                        <pre class="fragment"><code data-trim data-noescape>
 val a: Int = 1
 val b = 1   // `Int` type is inferred
 val c: Int  // Type required when no initializer is provided
 c = 1       // definite assignment
                         </code></pre>
-                        <h4>Mutable variables</h4>
-                        <pre><code data-trim data-noescape>
+                        <h4 class="fragment">Mutable variables</h4>
+                        <pre class="fragment"><code data-trim data-noescape>
 var x = 5 // `Int` type is inferred
 x += 1
                         </code></pre>
@@ -363,6 +363,16 @@ val <T> List<T>.lastIndex: Int
                         </code></pre>
                         <p class="fragment">Extensions don't insert members into classes, so initializers are not allowed. Getters/setters must be used.</p>
                     </section>
+                </section>
+
+                <section>
+                    <h2>Use Cases</h2>
+                    <ul class="fragment">
+                        <li class="fragment">Android Development</li>
+                        <li class="fragment">JavaScript</li>
+                        <li class="fragment">Server-side</li>
+                        <li class="fragment">Web</li>
+                    </ul>
                 </section>
 
                 <section>
