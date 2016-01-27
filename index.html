@@ -443,8 +443,15 @@ val <T> List<T>.lastIndex: Int
                 <section>
                     <section>
                         <h2>Type-safe Builders</h2>
-                        <p>Consider the following code:</p>
-                        <pre><code data-trim data-noescape>
+                        <p class="fragment">Here is an example of generating HTML:</p>
+                        <aside class="notes">
+                            <p>The concept of builders is rather popular in the Groovy community. Builders allow for defining data in a semi-declarative way. Builders are good for generating XML, laying out UI components, describing 3D scenes and more…</p>
+                            <p>For many use cases, Kotlin allows to type-check builders, which makes them even more attractive than the dynamically-typed implementation made in Groovy itself.</p>
+                            <p>For the rest of the cases, Kotlin supports Dynamic types builders.<
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="stretch"><code data-trim data-noescape>
 import com.example.html.* // see declarations below
 
 fun result(args: Array<String>) =
