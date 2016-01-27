@@ -81,6 +81,25 @@
                             <li>A lot more!</li>
                         </ul>
                     </section>
+
+                    <section>
+                        <h2>Cool Little Features</h2>
+                        <ul class="fragment">
+                            <li>Package name is independent of directory structure</li>
+                            <li>Elvis operator</li>
+
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Things not covered in this presentation</h2>
+                        <h3>(But are worth mentioning)</h3>
+                        <ul>
+                            <li>Generics</li>
+                            <li>Destructuring declarations</li>
+                            <li>Type-safe builders</li>
+                        </ul>
+                    </section>
 				</section>
 
 
@@ -229,6 +248,49 @@ val str = "$s.length is ${s.length}" // "abc.length is 3"
                 </section>
 
                 <section>
+                    <section>
+                        <h2>Ranges</h2>
+                        <p class="fragment">Check if a number is in a range:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+if (x in 1..y-1)
+  print("OK")
+                        </code></pre>
+                        <p class="fragment">Or out of range:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+if (x !in 1..y-1)
+  print("OUT")
+                        </code></pre>
+                        <p class="fragment">Iterating over a range:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+for (x in 1..5)
+  print(x)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Collections</h2>
+                        <p class="fragment">Iterating over a collection:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+for (name in names)
+  println(name)
+                        </code></pre>
+                        <p class="fragment">Check if a collection contains an object</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+if (text in names) // names.contains(text) is called
+  print("Yes")
+                        </code></pre>
+                        <p class="fragment">Filter and map with lambda expressions:</p>
+                        <pre class="fragment"><code data-trim data-noescape>
+names
+    .filter { it.startsWith("A") }
+    .sortedBy { it }
+    .map { it.toUpperCase() }
+    .forEach { print(it) }
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
                     <h2>Data Classes</h2>
                     <p>Generates the following methods for free:</p>
                     <ul>
@@ -236,6 +298,10 @@ val str = "$s.length is ${s.length}" // "abc.length is 3"
                         <li>toString()</li>
                         <li>copy()</li>
                     </ul>
+                    <p class="fragment">Example:</p>
+                    <pre class="fragment"><code data-trim data-noescape>
+data class User(val name: String, val age: Int)
+                    </code></pre>
                 </section>
 
                 <section>
